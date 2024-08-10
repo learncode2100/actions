@@ -1,0 +1,15 @@
+name: "demo actions"
+on: 
+    push:
+jobs:
+    first_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: welcome
+              run: echo "Hello actions"
+            - uses: actions/checkout@v4
+            - name: ls
+              run: ls
+            - name: cat
+              run: cat README.md
+      
