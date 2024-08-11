@@ -5,11 +5,14 @@ jobs:
     first_job:
         runs-on: ubuntu-latest
         steps:
-            - name: welcome
-              run: echo "Hello actions"
-            - uses: actions/checkout@v4
-            - name: ls
-              run: ls
-            - name: cat
-              run: cat README.md
-      
+            - name: checkout
+              uses: checkout@v4
+            
+            - name: Install cowsay
+              run: apt-get install cowsay -y
+            
+            - name: cowsay
+              run: cowsay -f dragon "Run for cover I am a dragon ... RAWWW" >> dragon.txt
+
+            - name: display
+              run: grep -i dragon dragon.txt
