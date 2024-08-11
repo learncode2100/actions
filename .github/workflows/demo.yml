@@ -12,7 +12,7 @@ jobs:
               run: sudo apt-get install cowsay -y
             
             - name: cowsay
-              run: cowsay -f crash.cow "Run for cover I am a dragon ... RAWWW" >> lion.txt
+              run: cowsay -f moose "Run for cover I am a dragon ... RAWWW" >> lion.txt
 
             - name: display
               run: cat lion.txt
