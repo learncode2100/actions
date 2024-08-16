@@ -16,3 +16,19 @@ jobs:
 
             - name: display
               run: cat lion.txt
+            
+            - name: upload
+              uses: actions/upload-artifact@v3
+              with:
+                name: lion
+                path: lion.txt
+    second_job:
+      runs-on: ubuntu-latest
+      steps:
+        - name: download
+          uses: acions/download@v3
+          with:
+            name: lion
+            path: lion.txt
+        - name: display file
+          run: cat lion.txt
