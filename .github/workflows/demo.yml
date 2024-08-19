@@ -54,5 +54,5 @@ jobs:
           COLOR: blue
           DAY: Monday
         run: |
-          echo "{{ env.COLOR }}"
-          echo "{{ env.DAY }}"
+          echo ${{env.COLOR}}
+          echo ${{env.DAY}}
