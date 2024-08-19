@@ -40,12 +40,19 @@ on:
 jobs:
   job_1:
     runs-on: ubuntu-latest
+    # steps:
+    #   - name: step1
+    #     env:
+    #       COLOR: blue
+    #       DAY: Monday
+    #     run: |
+    #       echo "$COLOR"
+    #       echo "$DAY"
     steps:
       - name: step1
         env:
           COLOR: blue
           DAY: Monday
         run: |
-          echo "$COLOR"
-          echo "$DAY"
-
+          echo "{{ env.COLOR }}"
+          echo "{{ env.DAY }}"
