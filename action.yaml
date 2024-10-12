@@ -9,16 +9,17 @@ inputs:
     required: true
     description: This is number 2
     default: "0"
+outputs:
+  sum:
+    description: The sum of the two numbers
+    value: "10"
 runs:
   using: composite
   steps:
     - name: sum
       id: sum
-      shell: python
+      shell: bash
       run: |
-        sum = int(${{inputs.num1}}) + int(${{inputs.num2}})
-        print("::set-output name=sum::$sum")
-outputs:
-  sum:
-    description: The sum of the two numbers
-    value: ${{steps.sum.outputs.sum}}
+        # sum = int(${{inputs.num1}}) + int(${{inputs.num2}})
+        sum="30"
+        echo "::set-output name=sum::$sum"
