@@ -18,8 +18,7 @@ runs:
   steps:
     - name: sum
       id: sum
-      shell: bash
+      shell: python
       run: |
-        # sum = int(${{inputs.num1}}) + int(${{inputs.num2}})
-        sum="60"
-        echo "::set-output name=sum::$sum"
+        sum = int(${{inputs.num1}}) + int(${{inputs.num2}})
+        print("::set-output name=sum::$sum")
