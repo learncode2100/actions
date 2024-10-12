@@ -24,7 +24,7 @@ runs:
       #   sum=$(expr $num1 + $num2)
       #   echo "::set-output name=sum::$sum"
       run:  |
-        number1 = int("${{ inputs.number1 }}")
-        number2 = int("${{ inputs.number2 }}")
-        result = number1 + number2
+        # number1 = int("${{ inputs.num1 }}")
+        # number2 = int("${{ inputs.num2 }}")
+        result = int(${{inputs.num1}}) + int(${{inputs.num2}})
         print(f"::set-output name=sum::{result}")
