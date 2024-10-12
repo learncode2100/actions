@@ -12,7 +12,13 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: Sum
+    - name: sum
+      id: sum
       shell: python
       run: |
-        print(int(${{inputs.num1}}) + int(${{inputs.num2}}))
+        sum = int(${{inputs.num1}}) + int(${{inputs.num2}})
+        print("::set-output name=sum::$sum")
+outputs:
+  sum:
+    description: The sum of the two numbers
+    value: ${{steps.sum.outputs.sum}}
