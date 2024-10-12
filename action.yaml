@@ -1,5 +1,5 @@
 name: sum
-description: This adds two numbers
+description: This adds two numbers and returns the output value named sum
 inputs:
   num1:
     required: true
@@ -20,7 +20,6 @@ runs:
       id: sum
       shell: python
       # run: |
-      #   # sum = int(${{inputs.num1}}) + int(${{inputs.num2}})
       #   sum=$(expr $num1 + $num2)
       #   echo "::set-output name=sum::$sum"
       run:  |
