@@ -22,4 +22,4 @@ runs:
       run: |
         # sum = int(${{inputs.num1}}) + int(${{inputs.num2}})
         sum="60"
-        echo "::set-output name=sum::$sum"
+        # echo "::set-output name=sum::$sum"
