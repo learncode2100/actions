@@ -12,7 +12,7 @@ inputs:
 outputs:
   sum:
     description: The sum of the two numbers
-    value: "50"
+    value: ${{ steps.sum.outputs.sum }}
 runs:
   using: composite
   steps:
@@ -22,4 +22,4 @@ runs:
       run: |
         # sum = int(${{inputs.num1}}) + int(${{inputs.num2}})
         sum="60"
-        # echo "::set-output name=sum::$sum"
+        echo "::set-output name=sum::$sum"
