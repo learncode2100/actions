@@ -18,8 +18,13 @@ runs:
   steps:
     - name: sum
       id: sum
-      shell: bash
-      run: |
-        # sum = int(${{inputs.num1}}) + int(${{inputs.num2}})
-        sum=$(expr $num1 + $num2)
-        echo "::set-output name=sum::$sum"
+      shell: python
+      # run: |
+      #   # sum = int(${{inputs.num1}}) + int(${{inputs.num2}})
+      #   sum=$(expr $num1 + $num2)
+      #   echo "::set-output name=sum::$sum"
+      run:  |
+        number1 = int("${{ inputs.number1 }}")
+        number2 = int("${{ inputs.number2 }}")
+        result = number1 + number2
+        print(f"::set-output name=sum::{result}")
